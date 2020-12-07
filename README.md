@@ -1,1 +1,1 @@
-# Platova-Photos---
+# Platova-Photos-КПО Проект
