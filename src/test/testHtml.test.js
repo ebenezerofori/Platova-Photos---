@@ -2,13 +2,11 @@
 const chai = require('chai');
 const jsdom = require('jsdom');
 const fs = require('fs');
+// fs - file system
 
-
-describe('Our first test', () => {
-    it('should pass', () => {
-        chai.expect(true).to.equal(true);
-    });
-});
+// chai assertion library
+// mocha test framework
+// jsdom --- background DOM 
 describe('index.html', () => {
     it('should have h1 that says Hello World!', (done) => {
         const index = fs.readFileSync('./src/test.html', 'utf-8');
