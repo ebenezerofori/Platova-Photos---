@@ -2,7 +2,7 @@ const chai = require('chai');
 const jsdom = require('jsdom');
 const fs = require('fs');
 
-describe('Tests for Platova Photos', () => {
+describe('Test Suite For Existence of Platova Main Headings', () => {
   //test
   it('should have h1 (Services) that says УСЛУГИ И ЦЕНЫ', (done) => {
 
@@ -63,6 +63,13 @@ describe('Tests for Platova Photos', () => {
     });
   });
 
+});
+
+
+
+
+
+describe('Test Suite For Client Info', () => {  
 
   it('should have (Client Name) that says Татьяна Платова', (done) => {
     const index = fs.readFileSync('./src/index.html', 'utf-8');
@@ -104,6 +111,5 @@ describe('Tests for Platova Photos', () => {
       window.close();
     });
   });
-
   
 });
