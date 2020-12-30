@@ -18,8 +18,8 @@ describe('test.html', () => {
             const h1 = window.document.getElementsByTagName('h1')[0];
 
             //Assert - сверка ожидаемых значений с полученными.
-            //assert.strictEqual(h1.innerHTML, "Hello World!" );
-            chai.expect(h1.innerHTML).to.equal("Hello World!");
+            assert.strictEqual(h1.innerHTML, "Hello World!" );
+            //chai.expect(h1.innerHTML).to.equal("Hello World!");
 
             done();
             window.close();
