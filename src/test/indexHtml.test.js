@@ -2,17 +2,25 @@ const chai = require('chai');
 const jsdom = require('jsdom');
 const fs = require('fs');
 
-describe('index.html', () => {
+describe('Tests for Platova Photos', () => {
+  //test
   it('should have h1 (Services) that says УСЛУГИ И ЦЕНЫ', (done) => {
+
+    //Arrange - выставление  начальных условий
     const index = fs.readFileSync('./src/index.html', 'utf-8');
     jsdom.env(index, function (err, window) {
+
+      //Act - отработка тестируемого функционала.
       const serviceHeader = window.document.getElementsByTagName('h1')[0];
 
-      chai.expect(serviceHeader.innerHTML).to.equal('УСЛУГИ И ЦЕНЫ');
+      //Assert - сверка ожидаемых значений с полученными.
+      chai.expect(serviceHeader.innerHTML)
+      .to.equal('УСЛУГИ И ЦЕНЫ');
       done();
       window.close();
     });
   });
+
 
   it('should have h1 (Portfolio) that says Делаю красивые и стильные фотографии с любовью', (done) => {
     const index = fs.readFileSync('./src/index.html', 'utf-8');
@@ -26,6 +34,8 @@ describe('index.html', () => {
       window.close();
     });
   });
+
+
   it('should have h1 (About Us) that says ваша красота и уникальность - самое главное!', (done) => {
     const index = fs.readFileSync('./src/index.html', 'utf-8');
     jsdom.env(index, function (err, window) {
@@ -38,6 +48,7 @@ describe('index.html', () => {
       window.close();
     });
   });
+
 
   it('should have h1 (Contact Us) that says Хороший снимок не даст моменту сбежать.', (done) => {
     const index = fs.readFileSync('./src/index.html', 'utf-8');
@@ -52,7 +63,8 @@ describe('index.html', () => {
     });
   });
 
-  it('should have h3 (Client Name) that says Татьяна Платова', (done) => {
+
+  it('should have (Client Name) that says Татьяна Платова', (done) => {
     const index = fs.readFileSync('./src/index.html', 'utf-8');
     jsdom.env(index, function (err, window) {
       const clientName = window.document.getElementsByClassName('contact-p')[0];
@@ -63,7 +75,8 @@ describe('index.html', () => {
     });
   });
 
-  it('should have h3 (Client Email) that says tanyushaplatova@yandex.ru', (done) => {
+
+  it('should have (Client Email) that says tanyushaplatova@yandex.ru', (done) => {
     const index = fs.readFileSync('./src/index.html', 'utf-8');
     jsdom.env(index, function (err, window) {
       const clientEmail = window.document.getElementsByClassName(
@@ -72,13 +85,14 @@ describe('index.html', () => {
 
       chai
         .expect(clientEmail.innerHTML)
-        .to.equal('tanyushaplatova@yandex.ru<br>');
+        .to.equal('tanyushaplatova@yandex.ru');
       done();
       window.close();
     });
   });
 
-  it('should have h3 (Client Phone) that says +7 925 263 45 90', (done) => {
+
+  it('should have (Client Phone) that says +7 925 263 45 90', (done) => {
     const index = fs.readFileSync('./src/index.html', 'utf-8');
     jsdom.env(index, function (err, window) {
       const clientPhone = window.document.getElementsByClassName(
@@ -90,4 +104,6 @@ describe('index.html', () => {
       window.close();
     });
   });
+
+  
 });

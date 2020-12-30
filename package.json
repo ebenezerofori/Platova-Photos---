@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "JavaScript development environment setup",
   "scripts": {
-    "start": "node src/server.js",
-    "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\""
+   
+    "testing": "mocha src/test/testHtml.test.js",
+    "PlatovaTest": "mocha src/test/indexHtml.test.js"
   },
   "author": "Ofori",
   "license": "MIT",
@@ -26,4 +27,3 @@
     "style-loader": "0.13.1"
   }
 }
-
